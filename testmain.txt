@@ -1,0 +1,24 @@
+list1.addItem(new ShoppingItem("Apple", 14.80, 12));
+list1.addItem(new ShoppingItem("Banana", 14.99, 12));
+list1.addItem(new ShoppingItem("Bad Item", 140.99, 2));
+//System.out.println(list1.getSummary());
+
+System.out.println("BEFORE:");
+System.out.println(list1.getDetails());
+printInventoryMap(inventory);
+System.out.println(balance);
+System.out.println("-----------------------------------------------------------------");
+
+list1.removeItem("Bad Item");
+balance = list1.getItem("Apple").buyItem(balance, inventory);
+balance = list1.getItem("Apple").buyItem(balance, inventory);
+int[] nutrition = {325,50,10,0,0};
+list1.addItem(new GroceryItem("Ribeye Steak", 42.00, 1, nutrition, "07/10/2023"));
+list1.addItem(new DeliveryItem("Electronics", 70.00, 1, "08/01/23", "Amazon"));
+
+System.out.println("AFTER:");
+System.out.println(list1.getDetails());
+printInventoryMap(inventory);
+System.out.println(balance);
+
+printNutritionMap(nutritionMap);
