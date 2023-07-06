@@ -10,12 +10,12 @@ public class ShoppingList {
     private DecimalFormat numberFormat = new DecimalFormat("#.00");
     private final int NAME_SPACING_OFFSET = 25;
 
-    public ShoppingList(String name, String type){
+    public ShoppingList(String name, String type){ // constructor 
         this.name = name; 
         this.type = type; 
     }
 
-    public void addItem(ShoppingItem itemToAdd){
+    public void addItem(ShoppingItem itemToAdd){ // adds item to item collection and checks for duplicate
         boolean hasDuplicate = false;
         int targetIndex = 0;
 
@@ -79,6 +79,14 @@ public class ShoppingList {
          
     }
 
+    public String getName(){
+        return name;
+    }
+
+    public ArrayList<ShoppingItem> getList(){
+        return shoppingItemList;
+    }
+
     public static String alignString(String txt, int strLength){
         // USE THIS METHOD WHEN PRINTING SUMMARY OR DETAILS 
         int lengthDifference = strLength - txt.length();
@@ -93,6 +101,6 @@ public class ShoppingList {
 
         return result; 
     }
-
+    //
 
 }

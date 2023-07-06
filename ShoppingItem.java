@@ -73,6 +73,10 @@ public class ShoppingItem implements Purchasable{
         return balance;
     }
 
+    public String getType(){
+        return "Other";
+    }
+
     public static String alignString(String txt, int strLength){
         // USE THIS METHOD WHEN PRINTING SUMMARY OR DETAILS 
         int lengthDifference = strLength - txt.length();

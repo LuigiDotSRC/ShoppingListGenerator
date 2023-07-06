@@ -12,4 +12,8 @@ public class DeliveryItem extends ShoppingItem{
     public String getDetails(){
         return super.getDetails() + " || Delivery Date: " + deliveryDate + " || Delivery Service: " + deliveryService;
     }
+
+    public String getType(){
+        return "DeliveryItem";
+    }
 }

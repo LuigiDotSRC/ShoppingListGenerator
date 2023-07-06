@@ -10,12 +10,29 @@ public class GroceryItem extends ShoppingItem {
         this.expirationDate = expirationDate;
     }
 
+    public GroceryItem(String name, double cost, int quantity, Integer[] Integernutrition, String expirationDate){
+        super(name, cost, quantity);
+        this.expirationDate = expirationDate;
+
+        int result[] = new int[Integernutrition.length];
+
+        for (int i = 0; i < Integernutrition.length; i++) {
+            result[i] = Integernutrition[i].intValue();
+        
+        this.nutrition = result;
+}
+    }
+
     public String getDetails(){
         return super.getDetails() + " || Calories: " + nutrition[0] + " || EXP date: " + expirationDate;
     }
 
     public String getNutrition(){
         return "Name: " + alignString(super.getName(), NAME_SPACING_OFFSET) + " || Calories: " + Integer.toString(nutrition[0]) + "Protein: " + Integer.toString(nutrition[1]) + "Fat: " + Integer.toString(nutrition[2]) + "Carbs: " + Integer.toString(nutrition[3]) + "Sodium: " + Integer.toString(nutrition[4]);
+    }
+
+    public String getType(){
+        return "GroceryItem";
     }
 
     public static String alignString(String txt, int strLength){
